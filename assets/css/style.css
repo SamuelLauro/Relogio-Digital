@@ -3,6 +3,7 @@ body {
   background-size: contain;
   font-family: 'One Piece', sans-serif;
   font-size: 30px;
+  overflow: hidden;
 }
 
 #container {
@@ -47,4 +48,33 @@ body {
   transform: scale(1.05);
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+}
+
+/* Tornar o relógio responsivo */
+@media screen and (max-width: 768px) {
+  #horas {
+    font-size: 3em;
+  }
+  
+  #minutos, #segundos {
+    font-size: 2em;
+  }
+  
+  #diaDaSemana, #data {
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #horas {
+    font-size: 2em;
+  }
+  
+  #minutos, #segundos {
+    font-size: 1.5em;
+  }
+  
+  #diaDaSemana, #data {
+    font-size: 0.8em;
+  }
 }
