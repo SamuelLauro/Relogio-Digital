@@ -1,25 +1,27 @@
-const horas = document.querySelector('#horas')
-const minutos = document.querySelector('#minutos')
-const segundos = document.querySelector('#segundos')
+function mostrarHorario() {
+    let data = new Date();
+    let horas = data.getHours();
+    let minutos = data.getMinutes();
+    let segundos = data.getSeconds();
+    let diaSemana = data.toLocaleString('pt-BR',{weekday:"long"});
+    let dia = data.getDate();
+    let mes = data.toLocaleString('pt-BR',{month:"long"} );
+    let ano = data.getFullYear();
 
-const relogio = setInterval(function time(){
-    let dateToday = new Date();
-    let hora = dateToday.getHours();
-    let min = dateToday.getMinutes();
-    let seg = dateToday.getSeconds();
-
-    if (hora < 10){
-        hora = '0' + hora
-    }
-    if (min < 10){
-        min = '0' + min
-    }
-    if (seg < 10){
-        seg = '0' + seg
-    }
     
-
-    horas.textContent = hora;
-    minutos.textContent = min;
-    segundos.textContent = seg
-})
+    // Adiciona um zero à frente do número, caso ele seja menor que 10
+    horas = horas < 10 ? "0" + horas : horas;
+    minutos = minutos < 10 ? "0" + minutos : minutos;
+    segundos = segundos < 10 ? "0" + segundos : segundos;
+  
+    let horasFormatadas = `${horas}:${minutos}:${segundos}`;
+    let dataFormada =`${diaSemana},${dia} de ${mes} de ${ano}`
+  
+    // Atualiza o conteúdo dos elementos HTML com as horas formatadas
+    document.getElementById("horas").innerHTML = horasFormatadas;
+    document.getElementById("data").innerHTML = dataFormada;
+  }
+  
+  // Atualiza as horas a cada segundo
+  setInterval(mostrarHorario, 1000);
+  

@@ -1,54 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
-
-*{
-    margin: 0px;
-    padding: 0px;
-    font-family: 'Share Tech', sans-serif;
+body {
+  background-image: url(https://i.pinimg.com/564x/ee/c1/98/eec19839f4045eb1792be37cacd4d5cc.jpg);
+  background-size: contain;
+  font-family: 'One Piece', sans-serif;
+  font-size: 30px;
 }
 
-body{
-    height: 100vh;
-    background: linear-gradient(150deg, #0B3954, #2F9C95);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 2px;
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.relogio{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 200px;
-    width: 550px;
-    background: transparent;
-    border-radius: 3px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.658);
-
+#relogio {
+  background-color: #BD9F87;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.relogio div{
-    height: 170px;
-    width: 150px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    background: rgba(0, 0, 0, 0.753);
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.733);
-    border-radius: 7px;
-    letter-spacing: 3px;
-    transition: all 0.2s ease-in-out;
+#horas {
+  font-size: 5em;
+  color: #3E2623;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  margin: 0;
 }
 
-.relogio span{
-    font-size: 50px;
-    
-    
+#minutos, #segundos {
+  font-size: 3em;
+  color: #C27D30;
+  text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+  margin: 0;
 }
 
-.relogio span.tempo{
-    font-size: 20px;
-    color: white;
+#diaDaSemana, #data {
+  font-size: 1.5em;
+  color: #555555;
+  margin: 0;
+}
+
+/* Adiciona um efeito de hover no relógio */
+#relogio:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
