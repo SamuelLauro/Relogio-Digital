@@ -15,13 +15,14 @@ function mostrarHorario() {
     segundos = segundos < 10 ? "0" + segundos : segundos;
   
     let horasFormatadas = `${horas}:${minutos}:${segundos}`;
-    let dataFormada =`${diaSemana},${dia} de ${mes} de ${ano}`
-  
-    // Atualiza o conteúdo dos elementos HTML com as horas formatadas
-    document.getElementById("horas").innerHTML = horasFormatadas;
-    document.getElementById("data").innerHTML = dataFormada;
+    let dataFormada =`${diaSemana}, ${dia} de ${mes} de ${ano}`
+
+    // Atualiza o conteúdo dos elementos HTML com as horas formatadas (texto puro, sem interpretar HTML)
+    document.getElementById("horas").textContent = horasFormatadas;
+    document.getElementById("data").textContent = dataFormada;
   }
-  
-  // Atualiza as horas a cada segundo
+
+  // Mostra a hora já ao abrir a página e depois atualiza a cada segundo
+  mostrarHorario();
   setInterval(mostrarHorario, 1000);
   
